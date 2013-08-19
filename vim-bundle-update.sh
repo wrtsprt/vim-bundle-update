@@ -2,11 +2,11 @@
 
 cd ~/.vim/bundle
 
-for directory in `ls ~/.vim/bundle`
+for directory in `ls -d ~/.vim/bundle/*`
 do
 	echo "Checking for $directory update..."
-	if [ -d "$directory/.git" ]
-       	then
+	if [ -e "$directory/.git" ]
+  then
 		cd $directory
 		git pull
 		cd ..
